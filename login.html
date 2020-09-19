@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storiology - Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Lato:wght@900&family=Nunito:wght@300&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="row" style="margin:0px;">
+    <div class="col no-gutters" style="text-align:center;background-color:crimson;height:100vh;position:relative;">
+      <div style="position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);">
+        <h1 style="color:white;">Log In</h1>
+        <p onclick="goSomewhere('volunteersignup.html')" style="cursor:pointer;color:black;">or log in to your volunteer account!</p>
+      </div>
+    </div>
+    <div class="col no-gutters" style="position:relative;">
+      <center style="position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);">
+    <input type="text" style="text-align:center;" placeholder="Username" id="username" style="text-align:center;">
+    <br>
+    <br>
+    <input type="password" style="text-align:center;" placeholder="Password" id="password" style="text-align:center;">
+    <br>
+    <br>
+    <button onclick="login()">Submit</button>
+  </center>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js">
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js">
+		</script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js">
+		</script>
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">
+		</script>
+		<script>
+			var firebaseConfig = {
+    		apiKey: "AIzaSyABaCNIW3tcJV-uzqtP6v7irI2eHghSPyI",
+        authDomain: "linx-70fe6.firebaseapp.com",
+        databaseURL: "https://linx-70fe6.firebaseio.com",
+        projectId: "linx-70fe6",
+        storageBucket: "linx-70fe6.appspot.com",
+        messagingSenderId: "1035025595006",
+        appId: "1:1035025595006:web:921df85f55a7b53a10b62f"
+  		};
+  		firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+		</script>
+    <script src="script.js"></script>
+</body>
+</html>
