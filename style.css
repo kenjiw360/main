@@ -1,0 +1,106 @@
+h1{
+  font-family: 'Lato';
+}
+h2{
+  font-family: 'Nunito';
+}
+h3{
+  font-family: 'Kumbh Sans';
+}
+h4{
+  font-family: 'Kumbh Sans';
+}
+p{
+  font-family: 'Kumbh Sans';
+}
+pre{
+  font-family: 'Quicksand';
+}
+input[type=text]{
+  font-family: 'Kumbh Sans';
+  padding:10px;
+  font-size: 20px;
+  transition:0.5s;
+}
+input[type=text]:focus{
+  font-family: 'Kumbh Sans';
+  padding:10px;
+  font-size: 20px;
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+input[type=email]{
+  font-family: 'Kumbh Sans';
+  padding:10px;
+  font-size: 20px;
+  transition:0.5s;
+}
+input[type=email]:focus{
+  font-family: 'Kumbh Sans';
+  padding:10px;
+  font-size: 20px;
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+input[type=password]{
+  font-family: 'Kumbh Sans';
+  padding:10px;
+  font-size: 20px;
+  transition:0.5s;
+}
+input[type=password]:focus{
+  font-family: 'Kumbh Sans';
+  padding:10px;
+  font-size: 20px;
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+textarea{
+  font-family: 'Kumbh Sans';
+  padding:10px;
+  transition:0.5s;
+}
+button{
+  font-family: 'Nunito';
+  padding:10px;
+  border-radius: 10px;
+  font-size: 17px;
+  border: none;
+  transition: 0.75s;
+  margin:10px;
+}
+button:hover{
+  font-family: 'Nunito';
+  padding:10px;
+  border-radius: 20px;
+  font-size: 17px;
+  border: none;
+  transition: 0.75s;
+}
+.calendar{
+  background-color: white;
+  width: 100%;
+}
+day{
+  color: black;
+  background-color: lightgrey;
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid black
+}
+.giantbutton{
+  position:relative;
+  height:100vh;
+  padding:0px;
+  margin:0px;
+  border-radius:0px;
+}
+.giantbutton:hover{
+  position:relative;
+  height:100vh;
+  margin:0px;
+  border-radius:0px;
+}
