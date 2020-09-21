@@ -1,11 +1,11 @@
 h1{
-  font-family: 'Lato';
+  font-family: 'Lora';
 }
 h2{
-  font-family: 'Nunito';
+  font-family: 'Nora';
 }
 h3{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lato';
 }
 h4{
   font-family: 'Kumbh Sans';
@@ -17,13 +17,13 @@ pre{
   font-family: 'Quicksand';
 }
 input[type=text]{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lora';
   padding:10px;
   font-size: 20px;
   transition:0.5s;
 }
 input[type=text]:focus{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lora';
   padding:10px;
   font-size: 20px;
   outline: none;
@@ -31,13 +31,13 @@ input[type=text]:focus{
   box-shadow: 0 0 10px #9ecaed;
 }
 input[type=email]{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lora';
   padding:10px;
   font-size: 20px;
   transition:0.5s;
 }
 input[type=email]:focus{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lora';
   padding:10px;
   font-size: 20px;
   outline: none;
@@ -45,13 +45,13 @@ input[type=email]:focus{
   box-shadow: 0 0 10px #9ecaed;
 }
 input[type=password]{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lora';
   padding:10px;
   font-size: 20px;
   transition:0.5s;
 }
 input[type=password]:focus{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lora';
   padding:10px;
   font-size: 20px;
   outline: none;

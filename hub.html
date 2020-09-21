@@ -11,18 +11,12 @@
 <body onload="hub()">
   <center>
     <h1>Hub</h1>
-    <button onclick="goSomewhere('storiologyjoin.html')">Find a group</button><button onclick="goSomewhere('linxcreate.html')">Make a Group</button>
+    <button onclick="goSomewhere('storiologybrowse.html')">Find a group</button>
     <br>
     <br>
-    <div class="row" style="margin:0px;">
-      <div class="col no-gutters" style="width:100%;margin:0px;">
-        <h2>Owned Linx Groups</h2>
-        <div id="ownedlinxes"></div>
+      <h2>Joined Linx Groups</h2>
+      <div id="ownedlinxes">
       </div>
-      <div class="col no-gutters" style="width:100%;margin:0px;">
-        <h2>Joined Linx Groups</h2>
-      </div>
-    </div>
   </center>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">
 		</script>
