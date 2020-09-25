@@ -9,12 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Lato:wght@900&family=Nunito:wght@300&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 </head>
 <body onload="hub()">
+  <div style="padding:2.5vh;background-color: rgb(189,173,149);width:100%;margin:0px;">
+      <p style="font-family:Lora;font-size:2.5vh;margin:0px;padding:0px;float:right;cursor:pointer;" onclick="signout()">Sign Out</p>
+      <h2 style="font-family:Lora;font-size:5vh;margin:0px;padding:0px;margin-top:0px;">Storiology</h2>
+    </div>
   <center>
     <h1>Hub</h1>
-    <button onclick="goSomewhere('storiologybrowse.html')">Find a group</button>
+    <button onclick="goSomewhere('storiologybrowse.html')">Find a volunteer</button>
     <br>
     <br>
-      <h2>Joined Linx Groups</h2>
+      <h2>Volunteers Remembered</h2>
       <div id="ownedlinxes">
       </div>
   </center>

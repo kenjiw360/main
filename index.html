@@ -4,14 +4,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Storiology</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Lato:wght@900&family=Nunito:wght@300&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Lato:wght@900&family=Nunito:wght@300&family=Quicksand:wght@500&family=Lora&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <center>
-      <h1>Storiology</h1>
-      <button onclick="goSomewhere('signup.html')">Sign Up</button><button onclick="goSomewhere('login.html')">Login</button>
-    </center>
+  <body style="background-color: rgb(189,173,149);margin:0px;">
+    <div style="padding:2.5vh;background-color: rgb(189,173,149);width:100%;margin:0px;">
+      <p style="font-family:Lora;font-size:2.5vh;margin:0px;padding:0px;float:right;cursor:pointer;" onclick="goSomewhere('signup.html')">Signup | Login</p>
+      <h2 style="font-family:Lora;font-size:5vh;margin:0px;padding:0px;margin-top:0px;">Storiology</h2>
+    </div>
+    <div style="background-color:white;height:90vh;width:100%;text-align:center;">
+      <div style="display: flex;flex-wrap: wrap;justify-content:center;justify-content: space-around;">
+        <div style="width:30%;height:80vh;background: url(book.jpeg) no-repeat center center fixed;background-size: cover;margin-top:5vh;"></div>
+        <div style="width:30%;height:80vh;background: url(book.jpeg) no-repeat center center fixed;background-size: cover;margin-top:5vh;"></div>
+        <div style="width:30%;height:80vh;background: url(book.jpeg) no-repeat center center fixed;background-size: cover;margin-top:5vh;"></div>
+      </div>
+    </div>
+    <div class="row" style="margin:0px;padding:0px;height:100vh;overflow:visible;">
+      <div class="col no-gutters;" style="margin:0px;padding:0px;overflow:visible;">
+        <div style="background: url(window.jpeg) no-repeat center center;background-size: cover;height:100vh;clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);padding:0px;margin:0px;">
+        </div>
+      </div>
+      <div class="col-4 no-gutters;margin:0px;padding:0px;">
+        <center style="position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);">
+          <h2>Our Mission</h2>
+          <p></p>
+        </center>
+      </div>
+    </div>
+    <div style="width:100%;height:100vh;background-color: rgb(236, 236, 236);padding:0px;margin:0px;">
+      <h2 style="font-family: Lora;font-size:5vh;margin:2.5vh;margin-top:0px;padding:0px;text-align:center;">Their Stories</h2>
+      <div style="display: flex;flex-wrap: wrap;justify-content:center;justify-content: space-around;width:100%;height:90vh;margin:0px;padding:0px;">
+        <div style="width:40%;height:40vh;margin:0px;margin-top:2.5vh;margin-bottom:2.5vh;background-color: white;">
+          <img src="" style="width:100%;height:70%;object-cover:contain;padding:0px;margin:0px;">
+          <pre style="font-size:2vh;margin:0px;padding:0px;font-family: 'Lora';">Name:</pre>
+        </div>
+      </div>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">
 		</script>
 		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js">
@@ -36,7 +65,7 @@
   		firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
       if(localStorage.getItem("userToken")){
-        location = "hub.html";
+        location = "hub.html"
       }
 		</script>
     <script src="script.js"></script>

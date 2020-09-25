@@ -3,48 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Storiology - Join A Room</title>
+  <title>Storiology</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Lato:wght@900&family=Nunito:wght@300&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 </head>
-<body onload="linxsearch()">
-  <center>
-    <h1>Join a Group</h1>
-      <input type="text" maxlength="25" style="text-align:center;margin:15px;width:75%" placeholder="Search for Groups" id="search" autocomplete="off">
-      <div id="everything" style="display: flex;flex-wrap: wrap;justify-content:center;justify-content: space-around;"></div>
-  </center>
+<body onload="storiology()">
+    <div style="padding:2.5vh;background-color: rgb(189,173,149);width:100%;margin:0px;">
+      <p style="font-family:Lora;font-size:2.5vh;margin:0px;padding:0px;float:right;cursor:pointer;" onclick="signout()">Sign Out</p>
+      <h2 style="font-family:Lora;font-size:5vh;margin:0px;padding:0px;margin-top:0px;">Storiology</h2>
+    </div>
+    <div style="padding:15px;margin:0px;height:89vh;">
+      <h2 id="name"></h2>
+      <pre id="description"></pre>
+      <button>🤍 Remember the Volunteer</button>
+      <button>❌ Report the Volunteer</button>
+      <button onclick="goSomewhere('#messages')">💬 Message the Volunteer</button>
+      <h3>Available Meeting Times:</h3>
+      <table>
+        <tr>
+          <th>Monday</th><td id="monday"></td>
+        </tr>
+        <tr>
+          <th>Tuesday</th>
+          <td id="tuesday"></td>
+        </tr>
+        <tr>
+          <th>Wednesday</th><td id="wednesday"></td>
+        </tr>
+        <tr>
+          <th>Thursday</th><td id="thursday"></td>
+        </tr>
+        <tr>
+          <th>Friday</th><td id="friday"></td>
+        </tr>
+        <tr>
+          <th>Saturday</th><td id="saturday"></td>
+        </tr>
+        <tr>
+          <th>Sunday</th><td id="sunday"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="messages" style="background-color:rgb(236, 236, 236);height:100vh;width:100%;position:absolute;">
+      <input type="text" style="width:95%;margin:10px;position:absolute;bottom:0;">
+    </div>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">
-	</script>
-	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js">
-	</script>
-	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js">
-	</script>
-  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js">
-	</script>
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">
-	</script>
-	<script>
-		var firebaseConfig = {
-    	apiKey: "AIzaSyABaCNIW3tcJV-uzqtP6v7irI2eHghSPyI",
-      authDomain: "linx-70fe6.firebaseapp.com",
-      databaseURL: "https://linx-70fe6.firebaseio.com",
-      projectId: "linx-70fe6",
-      storageBucket: "linx-70fe6.appspot.com",
-      messagingSenderId: "1035025595006",
-      appId: "1:1035025595006:web:921df85f55a7b53a10b62f"
-  	};
-  	firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    if(!(localStorage.getItem("userToken"))){
-      location = "index.html";
-    }
-    if(localStorage.getItem("type") == "volunteer"){
-        location = "volunteerhub.html";
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js">
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js">
+		</script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js">
+		</script>
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">
+		</script>
+		<script>
+			var firebaseConfig = {
+    		apiKey: "AIzaSyABaCNIW3tcJV-uzqtP6v7irI2eHghSPyI",
+        authDomain: "linx-70fe6.firebaseapp.com",
+        databaseURL: "https://linx-70fe6.firebaseio.com",
+        projectId: "linx-70fe6",
+        storageBucket: "linx-70fe6.appspot.com",
+        messagingSenderId: "1035025595006",
+        appId: "1:1035025595006:web:921df85f55a7b53a10b62f"
+  		};
+  		firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      if(!(localStorage.getItem("userToken"))){
+        location = "index.html";
       }
-    document.getElementById('search').onkeyup = function (){linxsearch()}
-	</script>
-  <script src="script.js"></script>
+		</script>
+    <script src="script.js"></script>
 </body>
 </html>

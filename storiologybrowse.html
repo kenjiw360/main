@@ -10,9 +10,16 @@
 </head>
 <body onload="linxsearch()">
   <center>
-    <h1>Join a Group</h1>
+    <div style="display: inline-block;float: left; width: 20%; height: 100%"><div style="background: #DDD3C5; width: 100%; height: 100%; overflow: auto;">
+    <br>
+    <h3 style="font-size: 50px">Filters</h3>
+    <h2 style="font-size: 30px">Age of Reader:</h2>
+    <input type="checkbox" id="13" name="13" value="13">
+    <label for="vehicle1">13 and under</label>
+    </div></div>
+    <div style="display: inline-block; width: 75%; float right; position absolute"><h1>Join a Group</h1>
       <input type="text" maxlength="25" style="text-align:center;margin:15px;width:75%" placeholder="Search for Groups" id="search" autocomplete="off">
-      <div id="everything" style="display: flex;flex-wrap: wrap;justify-content:center;justify-content: space-around;"></div>
+      <div id="everything" style="display: flex;flex-wrap: wrap;justify-content:center;justify-content: space-around;"></div></div>
   </center>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">
 	</script>

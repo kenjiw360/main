@@ -2,19 +2,19 @@ h1{
   font-family: 'Lora';
 }
 h2{
-  font-family: 'Nora';
+  font-family: 'Lora';
 }
 h3{
-  font-family: 'Lato';
+  font-family: 'Lora';
 }
 h4{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lora';
 }
 p{
-  font-family: 'Kumbh Sans';
+  font-family: 'Lora';
 }
 pre{
-  font-family: 'Quicksand';
+  font-family: 'Lora';
 }
 input[type=text]{
   font-family: 'Lora';
@@ -64,43 +64,45 @@ textarea{
   transition:0.5s;
 }
 button{
-  font-family: 'Nunito';
+  font-family: 'Lora';
   padding:10px;
   border-radius: 10px;
   font-size: 17px;
-  border: none;
+  border: solid 2px;
+  background-color: rgb(189, 173, 150);
   transition: 0.75s;
   margin:10px;
 }
 button:hover{
-  font-family: 'Nunito';
+  font-family: 'Lora';
   padding:10px;
   border-radius: 20px;
   font-size: 17px;
-  border: none;
+  border: solid 2px;
   transition: 0.75s;
+  margin:10px;
 }
-.calendar{
-  background-color: white;
-  width: 100%;
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-family: 'Lora';
+  padding:5px;
 }
-day{
-  color: black;
-  background-color: lightgrey;
-  display: inline-block;
-  padding: 10px;
-  border: 1px solid black
+th{
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-family: 'Lora';
+  font-weight: normal;
+  padding:5px;
+  width:100px;
 }
-.giantbutton{
-  position:relative;
-  height:100vh;
-  padding:0px;
-  margin:0px;
-  border-radius:0px;
+td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-family: 'Lora';
+  padding:5px;
+  width:200px;
 }
-.giantbutton:hover{
-  position:relative;
-  height:100vh;
-  margin:0px;
-  border-radius:0px;
+html {
+  scroll-behavior: smooth;
 }
