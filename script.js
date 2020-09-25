@@ -239,7 +239,7 @@ function report(name, email, reason){
             <html>
               <center>
                 <h1 style="font-family:sans-serif;">Report</h1>
-                <h2 style="font-family:sans-serif;">`+snapshot.data().name+`</h2>
+                <h2 style="font-family:sans-serif;">`+name+`</h2>
                 <pre style="font-family:sans-serif;">`+reason+`</pre>
                 <br>
                 <button onclick="db.collection('users').where('name','==',`+name+`).delete()>Delete Account</button>
