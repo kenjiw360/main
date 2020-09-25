@@ -273,3 +273,8 @@ function report(name, email, reason){
           })
   })
 }
+function reportr(){
+	var stuff = "+ document.getElementById('name') +", "+ document.getElementById('email') +", "+ document.getElementById('reason') +"
+	console.log(stuff)
+	report(stuff)
+}
