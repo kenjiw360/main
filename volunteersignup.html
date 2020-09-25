@@ -21,6 +21,9 @@
       <input type="text" style="text-align:center;" placeholder="Email" id="email">
       <br>
       <br>
+      <input type="text" style="text-align:center;" placeholder="Age" id="age">
+      <br>
+      <br>
       <input type="password" style="text-align:center;" placeholder="Password" id="password">
       <br>
       <br>
@@ -89,7 +92,7 @@
   		firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
       function mail(){
-        if(document.getElementById("email").value && document.getElementById("name").value && document.getElementById("description").value && document.getElementById("password").value && document.getElementById("monday").value && document.getElementById("tuesday").value && document.getElementById("wednesday").value && document.getElementById("thursday").value && document.getElementById("friday").value && document.getElementById("saturday").value && document.getElementById("sunday").value){
+        if(document.getElementById("email").value && document.getElementById("name").value && document.getElementById("description").value && document.getElementById("password").value && document.getElementById("monday").value && document.getElementById("tuesday").value && document.getElementById("wednesday").value && document.getElementById("thursday").value && document.getElementById("friday").value && document.getElementById("saturday").value && document.getElementById("sunday").value && document.getElementById("age").value){
           Email.send({
             SecureToken : "129bdd55-9ab5-4d42-a225-eb412ce9bd0c",
             Host : "smtp.mailtrap.io",
@@ -106,7 +109,7 @@
                 <h2 style="font-family:sans-serif;">`+document.getElementById("name").value+`</h2>
                 <pre style="font-family:sans-serif;">`+document.getElementById("description").value+`</pre>
                 <br>
-                <button onclick="volunteersignup('`+document.getElementById("name").value+`','`+document.getElementById("email").value+`','`+document.getElementById("password").value+`','`+document.getElementById("email").value+`','`+document.getElementById("monday").value+`','`+document.getElementById("tuesday").value+`','`+document.getElementById("wednesday").value+`','`+document.getElementById("thursday").value+`','`+document.getElementById("friday").value+`','`+document.getElementById("saturday").value+`','`+document.getElementById("sunday").value+`','`+document.getElementById("description").value+`')">Allow Volunteer</button>
+                <button onclick="volunteersignup('`+document.getElementById("name").value+`','`+document.getElementById("email").value+`','`+document.getElementById("password").value+`','`+document.getElementById("email").value+`','`+document.getElementById("monday").value+`','`+document.getElementById("tuesday").value+`','`+document.getElementById("wednesday").value+`','`+document.getElementById("thursday").value+`','`+document.getElementById("friday").value+`','`+document.getElementById("saturday").value+`','`+document.getElementById("sunday").value+`','`+document.getElementById("description").value+`','`+document.getElementById("age").value+`')">Allow Volunteer</button>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">
 		</sc`+`ript>
                 <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">

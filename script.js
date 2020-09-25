@@ -2,7 +2,7 @@ function goSomewhere(x){
   location = x;
 }
 function signup(){
-  var username = document.getElementById('username').value
+  var username = document.getElementById('email').value
   username = username.replace(/>/g,"›")
   username = username.replace(/</g,"‹")
   var password = document.getElementById('password').value
@@ -26,7 +26,7 @@ function signup(){
         .then(function (snapshot){
           localStorage.setItem("userToken",snapshot.id)
           localStorage.setItem("type","")
-          location = "hub.html"
+          location = "storiologybrowse.html"
         })
       }else{
         return
@@ -49,15 +49,15 @@ function login() {
     if(!snapshot.empty){
       localStorage.setItem("userToken",snapshot.docs[0].id)
       localStorage.setItem("type",snapshot.docs[0].data().type)
-    location = "hub.html"
+    location = "storiologybrowse.html"
     }else{
       document.getElementById('warning').innerHTML = "<h1>User Doesn't Exist<h1>"
     }
   })
 }
 function hub(x="members"){
-  db.collection("groups")
-  .where(x,"==",localStorage.getItem("userToken"))
+  db.collection("users")
+  .doc(localStorage.getItem("userToken"))
   .get()
   .then(function (snapshot){
     if(!(snapshot.empty)){
@@ -100,19 +100,15 @@ function linxsearch(x){
           h3.innerHTML = snapshot.docs[i].data().name
           var p = document.createElement("p");
           p.innerHTML = (snapshot.docs[i].data().description)
-          var button = document.createElement("button")
-          button.innerText = "View Volunteer"
-          button.setAttribute("onClick","goSomewhere(\"storiology.html?id="+snapshot.docs[i].id+"\")")
           var div = document.createElement("div")
-          div.style["border-radius"] = "20px";
-          div.style["border"] = "solid";
+          div.style["border"] = "solid 0.5px";
           div.style["padding"] = "10px";
           div.style["margin"] = "10px";
           div.style["width"] = "300px";
           div.style["overflow"] = "auto";
+          div.setAttribute("onClick","goSomewhere(\"storiology.html?id="+snapshot.docs[i].id+"\")")
           div.appendChild(h3)
           div.appendChild(p)
-          div.appendChild(button)
           document.getElementById("everything").appendChild(div)
         }
       }
@@ -172,7 +168,7 @@ function signout(){
   localStorage.clear()
   location = "";
 }
-  function volunteersignup(namer,usernamer,password,email,mon,tue,wed,thu,fri,sat,sun,description){
+  function volunteersignup(namer,usernamer,password,email,mon,tue,wed,thu,fri,sat,sun,description,age){
   var username = usernamer.replace(/>/g,"›")
   username = username.replace(/</g,"‹")
   var name = namer.replace(/>/g,"›")
@@ -196,7 +192,8 @@ function signout(){
           friday: fri,
           saturday: sat,
           sunday: sun,
-          description: description
+          description: description,
+          age: parseInt(age)
         })
         .then(function (snapshot){
           window.location = `mailto:`+email+`?subject=Storiology%20Team&body=%3C!DOCTYPE%20html%3E%0D%0A%3Chtml%3E%0D%0A%3Ccenter%3E%0D%0A%3Ch1%20style%3D%22font-family%3Asans-serif%3B%22%3E%F0%9F%8E%89You're%20In!%F0%9F%8E%89%3C%2Fh1%3E%0D%0A%3Cp%20style%3D%22font-family%3Asans-serif%3B%22%3ECongratulations!%20You%20are%20the%20newest%20official%20Storiology%20volunteer!%3C%2Fp%3E%0D%0A%3Cp%20style%3D%22font-family%3Asans-serif%3B%22%3ELet's%20go%20change%20some%20kid's%20lives%3C%2Fp%3E%0D%0A%3Ca%20href%3D%22https%3A%2F%2Fstoriology.kenjiw360.repl.co%2Fmain%2Fsignup.html%22%20style%3D%22font-weight%3Abold%3Bcolor%3Agrey%3Bfont-family%3Asans-serif%3B%22%3EClick%20Here%20to%20go%20to%20the%20volunteer%20login.%20Use%20the%20credentials%20you%20sent%20us%3C%2Fa%3E%0D%0A%3C%2Fcenter%3E%0D%0A%3C%2Fhtml%3E%60`
@@ -224,6 +221,55 @@ function storiology(){
     document.getElementById("sunday").innerText = snapshot.data().sunday
   })
 }
-function report(){
+function report(name, email, reason){
   db.collection("users")
+  .where("name","==",name)
+  .get()
+  .then(function(snapshot){
+    Email.send({
+            SecureToken : "129bdd55-9ab5-4d42-a225-eb412ce9bd0c",
+            Host : "smtp.mailtrap.io",
+            Username : "c1d3e6aa88a22f",
+            Password : "623b5974c13bc9",
+            To : "storiologyteam@gmail.com",
+            From : email,
+            CC : "storiologyteam@gmail.com",
+            Subject : "Report",
+            Body : `
+            <html>
+              <center>
+                <h1 style="font-family:sans-serif;">Report</h1>
+                <h2 style="font-family:sans-serif;">`+snapshot.data().name+`</h2>
+                <pre style="font-family:sans-serif;">`+reason+`</pre>
+                <br>
+                <button onclick="db.collection('users').where('name','==',`+name+`).delete()>Delete Account</button>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">
+		</sc`+`ript>
+                <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">
+		</scr`+`ipt>
+		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js">
+		</scr`+`ipt>
+		<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js">
+		</scr`+`ipt>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">
+		</scr`+`ipt>
+		<script>
+			var firebaseConfig = {
+    		apiKey: "AIzaSyABaCNIW3tcJV-uzqtP6v7irI2eHghSPyI",
+        authDomain: "linx-70fe6.firebaseapp.com",
+        databaseURL: "https://linx-70fe6.firebaseio.com",
+        projectId: "linx-70fe6",
+        storageBucket: "linx-70fe6.appspot.com",
+        messagingSenderId: "1035025595006",
+        appId: "1:1035025595006:web:921df85f55a7b53a10b62f"
+  		};
+  		firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+                </scri`+`pt>
+                <script src="script.js"></sc`+`ript>
+              </center>
+            </html>`
+          })
+  })
 }

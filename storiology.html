@@ -17,7 +17,7 @@
       <h2 id="name"></h2>
       <pre id="description"></pre>
       <button>🤍 Remember the Volunteer</button>
-      <button>❌ Report the Volunteer</button>
+      <button onclick="goSomewhere('/main/report.html')">❌ Report the Volunteer</button>
       <button onclick="goSomewhere('#messages')">💬 Message the Volunteer</button>
       <h3>Available Meeting Times:</h3>
       <table>
@@ -46,7 +46,7 @@
       </table>
     </div>
     <div id="messages" style="background-color:rgb(236, 236, 236);height:100vh;width:100%;position:absolute;">
-      <input type="text" style="width:95%;margin:10px;position:absolute;bottom:0;">
+      <input type="text" style="width:95%;margin:10px;position:absolute;bottom:0;" id="submitmessage">
     </div>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">
 		</script>
