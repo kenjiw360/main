@@ -3,22 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Storiology - Join A Room</title>
+  <title>Storiology - Find A Volunteer</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Lato:wght@900&family=Nunito:wght@300&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 </head>
-<body onload="linxsearch()">
+<body onload="linxsearch(); hub();">
     <div style="padding:2.5vh;background-color: rgb(189,173,149);width:100%;margin:0px;">
       <p style="font-family:Lora;font-size:2.5vh;margin:0px;padding:0px;float:right;cursor:pointer;" onclick="signout()">Sign Out</p>
       <h2 style="font-family:Lora;font-size:5vh;margin:0px;padding:0px;margin-top:0px;">Storiology</h2>
     </div>
     <br>
-    <center>
-    <div style="display: inline-block; width: 75%; float right; position absolute"><h1>Join a Group</h1>
+    <div class="row" style="margin:0px;padding:0px;">
+      <div class="col no-gutters">
+        <center>
+    <div style="display: inline-block; width: 75%; float right; position absolute"><h1>Find A Volunteer</h1>
       <input type="text" maxlength="25" style="text-align:center;margin:15px;width:75%" placeholder="Search for Groups" id="search" autocomplete="off">
       <div id="everything" style="display: flex;flex-wrap: wrap;justify-content:center;justify-content: space-around;"></div></div>
   </center>
+      </div>
+      <div class="col-3 no-gutters">
+        <center style="width:100%;">
+            <h1>Volunteers Remembered</h1>
+            <div id="remembered">
+
+            </div>
+        </center>
+      </div>
+    </div>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js">
 	</script>
 	<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js">
