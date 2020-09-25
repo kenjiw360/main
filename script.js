@@ -55,31 +55,34 @@ function login() {
     }
   })
 }
-function hub(x="members"){
+function hub(){
   db.collection("users")
   .doc(localStorage.getItem("userToken"))
   .get()
   .then(function (snapshot){
     if(!(snapshot.empty)){
-      for(i = 0;i < snapshot.docs.length;i++){
-        var img = document.createElement("img")
-        img.style["width"] = "100px"
-        img.style["height"] = "100px"
-        img.style["border-radius"] = "50%"
-        img.style["object-fit"] = "cover"
-        img.src = snapshot.docs[i].data().logo
-        var h3 = document.createElement("h3")
-        h3.innerText = snapshot.docs[i].data().name
-        var id = snapshot.docs[i].id
-        var button = document.createElement("button")
-        button.innerText = "Go To Room"
-        button.onclick = function(){location = "storiology.html?id="+id}
-        var hr = document.createElement("hr")
-        hr.style["width"] = "90%"
-        document.getElementById("ownedlinxes").appendChild(hr)
-        document.getElementById("ownedlinxes").appendChild(img)
-        document.getElementById("ownedlinxes").appendChild(h3)
-        document.getElementById("ownedlinxes").appendChild(button)
+      for(i = 0;i < snapshot.data().rememberedpeople.length;i++){
+        db.collection("users")
+        .doc(snapshot.data().rememberedpeople[i])
+        .get()
+        .then(function (snapshot){
+          var h3 = document.createElement("h3");
+          h3.innerText = snapshot.data().name
+          var p = document.createElement("p");
+          p.innerText = snapshot.data().description
+          var div = document.createElement("div")
+          div.style["border"] = "solid 0.5px";
+          div.style["padding"] = "10px";
+          div.style["margin"] = "10px";
+          div.style["width"] = "300px";
+          div.style["cursor"] = "pointer";
+          div.style["overflow"] = "auto";
+          div.setAttribute("onClick","goSomewhere(\"storiology.html?id="+snapshot.id+"\")")
+          div.appendChild(h3)
+          div.appendChild(p)
+          document.getElementById("remembered").appendChild(div)
+        })
+
       }
     }else{
       document.getElementById("ownedlinxes").innerHTML = "<p><i>*Cricket*Cricket</i><br>Their aren't any volunteers you remembered!</p>";
@@ -105,6 +108,7 @@ function linxsearch(x){
           div.style["padding"] = "10px";
           div.style["margin"] = "10px";
           div.style["width"] = "300px";
+          div.style["cursor"] = "pointer";
           div.style["overflow"] = "auto";
           div.setAttribute("onClick","goSomewhere(\"storiology.html?id="+snapshot.docs[i].id+"\")")
           div.appendChild(h3)
@@ -277,4 +281,27 @@ function reportr(){
 	var stuff = ""+ document.getElementById('name').value +", "+ document.getElementById('email').value +", "+ document.getElementById('reason').value +""
 	console.log(stuff)
 	report(stuff)
+}
+function remember(){
+  var url = new URL(location.href);
+  var id = url.searchParams.get("id");
+  db.collection("users")
+  .doc(localStorage.getItem("userToken"))
+  .get()
+  .then(function (snapshot){
+    var remembered = snapshot.data().rememberedpeople
+    if(remembered.includes(id)){
+      document.getElementById("remember").innerText = "✔ Remembered";
+      return
+    }
+    remembered.push(id)
+    db.collection("users")
+    .doc(localStorage.getItem("userToken"))
+    .update({
+      rememberedpeople: remembered
+    })
+    .then(function (snapshot){
+      document.getElementById("remember").innerText = "✔ Remembered";
+    })
+  })
 }
