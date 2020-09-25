@@ -274,7 +274,7 @@ function report(name, email, reason){
   })
 }
 function reportr(){
-	var stuff = ""+ document.getElementById('name') +", "+ document.getElementById('email') +", "+ document.getElementById('reason') +""
+	var stuff = ""+ document.getElementById('name').value +", "+ document.getElementById('email').value +", "+ document.getElementById('reason').value +""
 	console.log(stuff)
 	report(stuff)
 }
