@@ -11,12 +11,12 @@
 <body onload="storiology()">
     <div style="padding:2.5vh;background-color: rgb(189,173,149);width:100%;margin:0px;">
       <p style="font-family:Lora;font-size:2.5vh;margin:0px;padding:0px;float:right;cursor:pointer;" onclick="signout()">Sign Out</p>
-      <h2 style="font-family:Lora;font-size:5vh;margin:0px;padding:0px;margin-top:0px;">Storiology</h2>
+      <h2 style="font-family:Lora;font-size:5vh;margin:0px;padding:0px;margin-top:0px;cursor:pointer;" onclick="goSomewhere('storiologybrowse.html')">Storiology</h2>
     </div>
     <div style="padding:15px;margin:0px;height:89vh;">
       <h2 id="name"></h2>
       <pre id="description"></pre>
-      <button>🤍 Remember the Volunteer</button>
+      <button onclick="remember()" id="remember">🤍 Remember the Volunteer</button>
       <button onclick="goSomewhere('/main/report.html')">❌ Report the Volunteer</button>
       <button onclick="goSomewhere('#messages')">💬 Message the Volunteer</button>
       <h3>Available Meeting Times:</h3>
