@@ -215,6 +215,7 @@ function storiology(){
   .get()
   .then(function (snapshot){
     document.getElementById("name").innerText = snapshot.data().name
+    document.getElementById("zoom").innerText = "Meeting Link: "+snapshot.data().zoom
     document.getElementById("description").innerText = snapshot.data().description
     document.getElementById("monday").innerText = snapshot.data().monday
     document.getElementById("tuesday").innerText = snapshot.data().tuesday
