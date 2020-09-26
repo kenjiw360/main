@@ -197,7 +197,7 @@ function signout(){
           saturday: sat,
           sunday: sun,
           description: description,
-          age: parseInt(age)
+          zoom: zoom
         })
         .then(function (snapshot){
           window.location = `mailto:`+email+`?subject=Storiology%20Team&body=%3C!DOCTYPE%20html%3E%0D%0A%3Chtml%3E%0D%0A%3Ccenter%3E%0D%0A%3Ch1%20style%3D%22font-family%3Asans-serif%3B%22%3E%F0%9F%8E%89You're%20In!%F0%9F%8E%89%3C%2Fh1%3E%0D%0A%3Cp%20style%3D%22font-family%3Asans-serif%3B%22%3ECongratulations!%20You%20are%20the%20newest%20official%20Storiology%20volunteer!%3C%2Fp%3E%0D%0A%3Cp%20style%3D%22font-family%3Asans-serif%3B%22%3ELet's%20go%20change%20some%20kid's%20lives%3C%2Fp%3E%0D%0A%3Ca%20href%3D%22https%3A%2F%2Fstoriology.kenjiw360.repl.co%2Fmain%2Fsignup.html%22%20style%3D%22font-weight%3Abold%3Bcolor%3Agrey%3Bfont-family%3Asans-serif%3B%22%3EClick%20Here%20to%20go%20to%20the%20volunteer%20login.%20Use%20the%20credentials%20you%20sent%20us%3C%2Fa%3E%0D%0A%3C%2Fcenter%3E%0D%0A%3C%2Fhtml%3E%60`
